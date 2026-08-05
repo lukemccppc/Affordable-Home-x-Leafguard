@@ -81,13 +81,13 @@
     .hero-stat-text{display:flex;flex-direction:column;line-height:1.35}
     .hero-stat-title{color:#fff;font-weight:800;font-size:15px}
     .hero-stat-sub{color:rgba(255,255,255,.55);font-size:12.5px}
-    .hero-stat.highlight{border:2px solid #fff;border-radius:12px;background:rgba(255,255,255,.12);padding:6px 24px}
+    .hero-stat.highlight{border:2px solid #fff;border-radius:12px;background:rgba(255,255,255,.12);padding:22px 24px;margin:-22px 0;align-self:stretch}
     @media (max-width:900px){
       .hero-stats-inner{display:grid;grid-template-columns:1fr 1fr;gap:12px}
       .hero-stat{border-right:none;padding:14px 10px;flex-direction:column;text-align:center;gap:6px;background:rgba(255,255,255,.08);border-radius:12px}
       .hero-stat-text{align-items:center}
-      .hero-stat.highlight{grid-column:1/-1;order:-1;flex-direction:row;text-align:left;background:rgba(255,255,255,.12);padding:10px 20px}
-      .hero-stat.highlight .hero-stat-text{align-items:flex-start}
+      .hero-stat.highlight{grid-column:1/-1;order:-1;flex-direction:row;justify-content:center;text-align:center;background:rgba(255,255,255,.12);padding:10px 20px;margin:0;align-self:auto}
+      .hero-stat.highlight .hero-stat-text{align-items:center}
     }
     section.block{padding:64px 20px}
     .container{max-width:1100px;margin:0 auto}
@@ -123,14 +123,14 @@
     .product-feats p{font-size:14px;color:var(--body);line-height:1.55}
     .reviews-section{position:relative;overflow:hidden;padding:88px 20px}
     .reviews-section::before{content:'';position:absolute;inset:0;background:url('./img/reviews-banner.webp') center/cover no-repeat}
-    .reviews-section::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.85),rgba(0,0,0,.93))}
+    .reviews-section::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,42,58,.85),rgba(23,42,58,.93))}
     .reviews-section .container{position:relative;z-index:1}
     .reviews-head{max-width:700px;margin:0 auto 48px;text-align:center}
     .reviews-head h2{color:#fff;font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px;line-height:1.2}
     .reviews-head p{color:rgba(255,255,255,.8);font-size:16px;line-height:1.7}
     .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto}
     .review-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:28px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-    .review-stars{color:#FFC107;font-size:15px;margin-bottom:14px;display:flex;gap:3px}
+    .review-stars{color:var(--orange);font-size:15px;margin-bottom:14px;display:flex;gap:3px}
     .review-quote{color:#fff;font-size:15px;line-height:1.65;margin-bottom:16px}
     .review-name{color:rgba(255,255,255,.7);font-weight:700;font-size:14px}
     @media (max-width:900px){.reviews-grid{grid-template-columns:1fr}}
@@ -164,7 +164,7 @@
     .faq-a{padding:0 20px 18px;font-size:14px;color:var(--body);line-height:1.65}
     .cta-banner{position:relative;overflow:hidden;background:var(--navy);text-align:center;padding:72px 20px}
     .cta-banner::before{content:'';position:absolute;inset:0;background:url('./img/hero-photo.jpg') center/cover no-repeat;opacity:.62}
-    .cta-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.68))}
+    .cta-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,42,58,.45),rgba(23,42,58,.68))}
     .cta-banner .container{position:relative;z-index:1;max-width:560px}
     .cta-banner h2{font-size:clamp(24px,3.5vw,40px);font-weight:800;color:#fff;margin-bottom:24px}
     .cta-zip-row{display:flex;flex-direction:column;gap:10px;max-width:420px;margin:0 auto}
@@ -402,7 +402,7 @@
 <section class="block why-section">
   <div class="container">
     <h2 class="sec-title">Why Choose Affordable Home?</h2>
-    <div class="sec-sub">We connect you with top-rated, verified gutter professionals. See if you qualify.</div>
+    <div class="sec-sub">We connect homeowners with top-rated local professionals and exclusive offers for every home project.</div>
     <div class="why-stats">
       <div class="stat-card"><div class="stat-num">75%</div><div class="stat-label">Off Installation</div></div>
       <div class="stat-card"><div class="stat-num">$200</div><div class="stat-label">Extra Savings</div></div>
