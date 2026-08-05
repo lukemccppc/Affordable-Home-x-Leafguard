@@ -25,9 +25,9 @@
     .hero-logo-bar{position:relative;z-index:3;display:flex;justify-content:center;padding:22px 20px 0}
     .hero-logo{height:43.2px;width:auto;filter:drop-shadow(0 2px 10px rgba(0,0,0,.4))}
     .hero{position:relative;overflow:hidden;background:var(--navy);padding:0 16px 56px}
-    .hero::before{content:'';position:absolute;inset:0;background:url('./img/hero-photo.png') center/cover no-repeat;opacity:.62}
+    .hero::before{content:'';position:absolute;inset:0;background:url('./img/hero-photo.jpg') center/cover no-repeat;opacity:.62}
     .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,31,60,.45),rgba(10,31,60,.68))}
-    .hero-content{position:relative;z-index:2;max-width:600px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:28px}
+    .hero-content{position:relative;z-index:2;max-width:600px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:44px;padding-bottom:24px}
     .offer-pct{font-family:'Inter',sans-serif;font-size:52px;font-weight:900;line-height:1;color:#fff;letter-spacing:-1.5px;text-shadow:0 2px 12px rgba(0,0,0,.45)}
     .offer-pct .amt{color:var(--orange)}
     .offer-style{font-family:'Inter',sans-serif;font-size:28px;font-weight:800;color:#fff;margin-top:4px;text-shadow:0 2px 10px rgba(0,0,0,.4)}
@@ -35,11 +35,13 @@
     .offer-detail strong{color:#fff;font-weight:800}
     .offer-copy{font-size:14px;font-weight:500;color:rgba(255,255,255,.62);margin-top:16px;line-height:1.7;max-width:480px}
     .offer-copy strong{color:rgba(255,255,255,.9);font-weight:700}
-    .promo-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:22px 0 24px}
+    .promo-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:24px 0 0}
+    .m-headline{font-size:42px;line-height:1.08;letter-spacing:-1px;margin:0}
+    .m-subline{font-size:19px;font-weight:800;color:#fff;margin-top:14px;line-height:1.45;text-shadow:0 2px 10px rgba(0,0,0,.4)}
+    .m-subline .amt{color:var(--orange)}
+    .zip-card{margin-top:22px}
     .promo-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:9px 20px;font-size:14px;font-weight:700;color:#fff;white-space:nowrap}
     .promo-pill i{font-size:14px;color:var(--orange)}
-    .promo-pill.highlight{background:var(--orange);border-color:var(--orange)}
-    .promo-pill.highlight i{color:#fff}
     .zip-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:28px 24px 24px;width:100%;max-width:440px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 20px 60px rgba(0,0,0,.3)}
     .zip-card-label{font-size:14px;font-weight:600;color:rgba(255,255,255,.9);margin-bottom:14px;text-align:center}
     .zip-input-row{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
@@ -74,22 +76,13 @@
     .sticky-cta-btn{flex-shrink:0;background:var(--orange);color:#fff;border:none;border-radius:10px;padding:12px 22px;font-size:13px;font-weight:800;text-transform:uppercase;cursor:pointer;text-decoration:none;letter-spacing:.5px}
     .claim-toast.show-when-sticky{bottom:72px}
 
-    /* qualify celebration flash */
-    .qualify-flash{position:fixed;inset:0;z-index:200;background:rgba(10,31,60,.96);display:none;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:24px}
-    .qualify-flash.show{display:flex;animation:qf-fade .25s ease}
-    @keyframes qf-fade{from{opacity:0}to{opacity:1}}
-    .qf-check{width:84px;height:84px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;margin-bottom:22px;animation:qf-pop .4s cubic-bezier(.18,1.4,.4,1)}
-    @keyframes qf-pop{0%{transform:scale(0)}100%{transform:scale(1)}}
-    .qf-check i{color:#fff;font-size:40px}
-    .qf-title{font-size:28px;font-weight:900;color:#fff;margin-bottom:8px}
-    .qf-title .amt{color:var(--orange)}
-    .qf-sub{font-size:15px;color:rgba(255,255,255,.8);max-width:340px}
-    .qf-zip{color:var(--orange);font-weight:800}
     .trust-strip{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:24px;flex-wrap:wrap}
     .trust-item{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:rgba(255,255,255,.75);white-space:nowrap}
     .trust-item i{color:var(--orange);font-size:14px}
     .trust-item.rating-pill{background:#fff;color:var(--navy);border-radius:100px;padding:8px 18px;font-size:15px;font-weight:800;box-shadow:0 6px 18px rgba(0,0,0,.2)}
     .trust-item.rating-pill i{color:#F0C419;font-size:15px}
+    .trust-item.highlight{background:var(--orange);color:#fff;border-radius:100px;padding:8px 18px;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+    .trust-item.highlight i{color:#fff}
     section.block{padding:64px 20px}
     .container{max-width:1100px;margin:0 auto}
     .sec-title{font-size:clamp(24px,3vw,34px);font-weight:800;text-align:center;line-height:1.2;color:var(--navy);margin-bottom:8px}
@@ -156,7 +149,7 @@
     .faq-item[open] .faq-arrow{transform:rotate(180deg)}
     .faq-a{padding:0 20px 18px;font-size:14px;color:var(--body);line-height:1.65}
     .cta-banner{position:relative;overflow:hidden;background:var(--navy);text-align:center;padding:72px 20px}
-    .cta-banner::before{content:'';position:absolute;inset:0;background:url('./img/hero-photo.png') center/cover no-repeat;opacity:.62}
+    .cta-banner::before{content:'';position:absolute;inset:0;background:url('./img/hero-photo.jpg') center/cover no-repeat;opacity:.62}
     .cta-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,31,60,.45),rgba(10,31,60,.68))}
     .cta-banner .container{position:relative;z-index:1;max-width:560px}
     .cta-banner h2{font-size:clamp(24px,3.5vw,40px);font-weight:800;color:#fff;margin-bottom:24px}
@@ -170,8 +163,6 @@
     .footer-links{margin-top:12px}
     .footer-links a{color:rgba(255,255,255,.7);font-size:13px;text-decoration:underline;margin:0 8px}
     @media (min-width:768px){.offer-pct{font-size:72px}.offer-style{font-size:32px}.hero-content{padding-top:64px}.gallery-grid{grid-template-columns:repeat(4,1fr)}}
-    @media (max-width:767px){.steps-grid{grid-template-columns:1fr;gap:32px}.benefits-grid,.why-features{grid-template-columns:1fr}.product-image-wrap{flex:none;width:240px}.problem-grid{grid-template-columns:1fr;gap:28px}.problem-img{order:-1}}
-    @media (max-width:540px){.gallery-grid{grid-template-columns:1fr}}
 
     /* ══════════════ DESKTOP-ONLY CUSTOM HERO ══════════════ */
     #hero-desktop{display:none}
@@ -180,26 +171,26 @@
       #hero-desktop{display:block}
       #hero-mobile{display:none}
     }
-    .dh-hero{position:relative;overflow:hidden;background:url('./img/hero-photo.png') center 45% / cover no-repeat}
+    .dh-hero{position:relative;overflow:hidden;background:url('./img/hero-photo.jpg') center 45% / cover no-repeat}
     .dh-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg, rgba(6,14,28,.95) 0%, rgba(6,14,28,.82) 25%, rgba(6,14,28,.5) 50%, rgba(6,14,28,.18) 75%, rgba(6,14,28,0) 100%);pointer-events:none;z-index:0}
     .dh-logo-row{position:relative;z-index:1;display:flex;justify-content:center;padding:14px 16px 4px}
     .dh-logo{height:32.4px;width:auto}
-    .dh-inner{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:68px 44px 56px}
-    .dh-content{max-width:640px;margin:0 auto;text-align:center}
-    .dh-headline{margin-bottom:12px}
-    .dh-line1{display:block;width:fit-content;margin:0 auto;font-size:clamp(42px,5.75vw,67px);font-weight:900;line-height:1.05;color:#fff;letter-spacing:-.5px}
+    .dh-inner{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:120px 44px 110px;display:grid;grid-template-columns:1.05fr .95fr;column-gap:48px;align-items:center}
+    .dh-content{max-width:640px;margin:0;text-align:left}
+    .dh-headline{margin-bottom:16px}
+    .dh-line1{display:block;width:fit-content;margin:0;font-size:clamp(42px,4.6vw,62px);font-weight:900;line-height:1.05;color:#fff;letter-spacing:-.5px}
     .dh-line2{display:block;width:fit-content;margin:6px auto 0;font-size:clamp(19px,2.79vw,32px);font-weight:900;line-height:1.15;color:#fff;letter-spacing:-.2px;white-space:nowrap}
     .dh-accent{color:var(--orange)}
-    .dh-sub{font-size:19px;font-weight:600;color:#fff;margin-bottom:26px;line-height:1.5}
+    .dh-sub{font-size:clamp(19px,1.9vw,25px);font-weight:700;color:#fff;margin-bottom:26px;line-height:1.45}
     .dh-sub strong{color:var(--orange);font-weight:800}
-    .dh-benefits{display:flex;flex-wrap:nowrap;justify-content:center;gap:8px;margin:0 auto 28px}
+    .dh-benefits{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:8px;margin:0 0 8px}
     .dh-ben{display:flex;align-items:center;gap:8px;padding:7px 16px 7px 7px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);font-size:12.5px;font-weight:700;color:#fff;white-space:nowrap}
     .dh-ben-circle{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.12);display:grid;place-items:center;flex-shrink:0}
     .dh-ben-circle i{color:var(--orange);font-size:12px}
     .dh-ben.highlight{background:var(--orange);border-color:var(--orange)}
     .dh-ben.highlight .dh-ben-circle{background:rgba(255,255,255,.25)}
     .dh-ben.highlight .dh-ben-circle i{color:#fff}
-    .dh-zip-card{background:rgba(20,32,54,.6);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:36px 40px;max-width:620px;margin:0 auto 26px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);text-align:center}
+    .dh-zip-card{background:rgba(20,32,54,.6);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:36px 40px;max-width:520px;width:100%;margin:0;justify-self:end;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);text-align:center}
     .dh-zip-card h3{color:#fff;font-size:18px;font-weight:800;margin-bottom:22px}
     .dh-zip-input{width:100%;padding:17px 18px;border-radius:10px;border:none;font-family:'Inter',sans-serif;font-size:15px;color:#333;background:#fff;outline:none;margin-bottom:14px;text-align:center}
     .dh-zip-input::placeholder{color:#9ca3af}
@@ -212,9 +203,12 @@
     .dh-zip-meta i{color:var(--orange)}
     .dh-zip-desc{margin-top:18px;font-size:14px;color:rgba(255,255,255,.78);line-height:1.7}
     .dh-zip-desc strong{color:#fff;font-weight:700}
+    @media (max-width:767px){.steps-grid{grid-template-columns:1fr;gap:32px}.benefits-grid,.why-features{grid-template-columns:1fr}.product-image-wrap{flex:none;width:240px}.problem-grid{grid-template-columns:1fr;gap:28px}.problem-img{order:-1}}
+    @media (max-width:540px){.gallery-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
+
 
 <div id="top">
 
@@ -226,11 +220,11 @@
     <div class="dh-inner">
       <div class="dh-content">
         <h1 class="dh-headline">
-          <span class="dh-line1">UP TO <span class="dh-accent">75% OFF</span></span>
-          <span class="dh-line2">GUTTER GUARD INSTALLATION</span>
+          <span class="dh-line1">No More Gutter Cleaning. Ever.</span>
         </h1>
         <p class="dh-sub">
-          <strong>+ An Extra $200 Off</strong> When You Purchase
+          Get a <strong>FREE</strong> Gutter Quote +<br>
+          <strong>Up To 75% Off</strong> Installation
         </p>
         <div class="dh-benefits">
           <div class="dh-ben highlight">
@@ -246,17 +240,16 @@
             <span>Maintenance-Free</span>
           </div>
         </div>
-        <div class="dh-zip-card" id="d1-zip-card">
-          <h3>Check if your zip code qualifies</h3>
-          <input class="dh-zip-input" id="d1-zip" type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="5" placeholder="Enter zip code" autocomplete="postal-code">
-          <button class="dh-zip-btn" id="d1-zip-btn" onclick="goToForm()"><i class="fas fa-lock"></i> Get Your Free Quote</button>
-          <div class="dh-zip-meta">
-            <div><i class="fas fa-clock"></i> Takes 30 seconds &mdash; No obligation</div>
-            <div><i class="fas fa-gift"></i> Free no-obligation estimate with every inquiry</div>
-          </div>
-          <div class="zip-err" id="d1-zip-err">Please enter a valid 5-digit zip code.</div>
-          <p class="dh-zip-desc">Stop cleaning your gutters for good. Qualifying zip codes get access to <strong>up to 75% off gutter guard installation</strong>, plus an extra $200 off. <strong>Debris-proof, pest-resistant</strong>, and built to last with a <strong>lifetime warranty</strong>.</p>
+      </div>
+      <div class="dh-zip-card" id="d1-zip-card">
+        <h3>See How Much You Could Save Today!</h3>
+        <input class="dh-zip-input" id="d1-zip" type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="5" placeholder="Enter zip code" autocomplete="postal-code">
+        <button class="dh-zip-btn" id="d1-zip-btn" onclick="goToForm()"><i class="fas fa-lock"></i> Get Your Free Quote</button>
+        <div class="dh-zip-meta">
+          <div><i class="fas fa-clock"></i> Takes 30 seconds &mdash; No obligation</div>
+          <div><i class="fas fa-gift"></i> Free no-obligation estimate with every inquiry</div>
         </div>
+        <div class="zip-err" id="d1-zip-err">Please enter a valid 5-digit zip code.</div>
       </div>
     </div>
   </section>
@@ -267,16 +260,10 @@
       <a href="#top"><img class="hero-logo" src="./img/autoprotect-logo.svg" alt="AutoProtect"></a>
     </div>
     <div class="hero-content">
-      <div class="offer-pct">Up to <span class="amt">75% Off</span></div>
-      <div class="offer-style">Gutter Guard Installation</div>
-      <div class="offer-detail"><strong style="color:var(--orange)">+ An Extra $200 Off</strong> When You Purchase</div>
-      <div class="promo-row">
-        <div class="promo-pill highlight"><i class="fas fa-shield-halved"></i> Lifetime Warranty</div>
-        <div class="promo-pill"><i class="fas fa-leaf"></i> Debris-Proof</div>
-        <div class="promo-pill"><i class="fas fa-broom"></i> Maintenance-Free</div>
-      </div>
+      <h1 class="offer-pct m-headline">No More Gutter Cleaning. Ever.</h1>
+      <div class="m-subline">Get a <span class="amt">FREE</span> Gutter Quote +<br><span class="amt">Up To 75% Off</span> Installation</div>
       <div class="zip-card" id="zip-card">
-        <div class="zip-card-label">Check if your zip code qualifies</div>
+        <div class="zip-card-label">See How Much You Could Save Today!</div>
         <div class="zip-input-row">
           <input class="zip-input" id="p1-zip" type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="5" placeholder="Enter zip code" autocomplete="postal-code">
           <button class="zip-btn" id="p1-zip-btn" onclick="goToForm()"><i class="fas fa-lock"></i> Get Your Free Quote</button>
@@ -284,12 +271,14 @@
         <div class="zip-step"><i class="fas fa-clock"></i> Takes 30 seconds &mdash; No obligation</div>
         <div class="zip-microcopy"><i class="fas fa-gift"></i> Free no-obligation estimate with every inquiry</div>
         <div class="zip-err" id="p1-zip-err">Please enter a valid 5-digit zip code.</div>
-        <p class="offer-copy" style="margin-top:16px;text-align:center">Stop cleaning your gutters for good. Qualifying zip codes get access to <strong>up to 75% off gutter guard installation</strong>, plus an extra $200 off. <strong>Debris-proof, pest-resistant, and built to last with a lifetime warranty.</strong></p>
+      </div>
+      <div class="promo-row">
+        <div class="promo-pill"><i class="fas fa-leaf"></i> Debris-Proof</div>
+        <div class="promo-pill"><i class="fas fa-broom"></i> Maintenance-Free</div>
       </div>
       <div class="trust-strip">
-        <div class="trust-item rating-pill"><i class="fas fa-star"></i> 4.8/5 Rating</div>
-        <div class="trust-item"><i class="fas fa-shield-halved"></i> Licensed &amp; Insured</div>
-        <div class="trust-item"><i class="fas fa-award"></i> Thousands of Reviews</div>
+        <div class="trust-item highlight"><i class="fas fa-shield-halved"></i> Lifetime Warranty</div>
+        <div class="trust-item"><i class="fas fa-award"></i> Certified Pros</div>
       </div>
     </div>
   </section>
@@ -352,7 +341,7 @@
     <h2 class="sec-title">In Partnership With</h2>
     <div class="sec-sub">&nbsp;</div>
     <div class="partners-grid">
-      <div class="partner-logo featured-partner"><img src="./img/partner-leafguard.jpg" alt="LeafGuard" loading="lazy"></div>
+      <div class="partner-logo featured-partner"><img src="./img/leafguard-logo.jpg" alt="LeafGuard" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -362,10 +351,10 @@
     <h2 class="sec-title">Inspiration Gallery</h2>
     <div class="sec-sub">Professional gutter guard installations</div>
     <div class="gallery-grid">
-      <div class="gallery-img"><img src="./img/gallery1.png" alt="Gutter guard installation 1" loading="lazy"></div>
-      <div class="gallery-img"><img src="./img/gallery2.png" alt="Gutter guard installation 2" loading="lazy"></div>
-      <div class="gallery-img"><img src="./img/gallery3.png" alt="Gutter guard installation 3" loading="lazy"></div>
-      <div class="gallery-img"><img src="./img/gallery4.png" alt="Gutter guard installation 4" loading="lazy"></div>
+      <div class="gallery-img"><img src="./img/gallery-1.png" alt="Gutter guard installation 1" loading="lazy"></div>
+      <div class="gallery-img"><img src="./img/gallery-2.png" alt="Gutter guard installation 2" loading="lazy"></div>
+      <div class="gallery-img"><img src="./img/gallery-3.png" alt="Gutter guard installation 3" loading="lazy"></div>
+      <div class="gallery-img"><img src="./img/gallery-4.png" alt="Gutter guard installation 4" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -441,20 +430,13 @@
   <a href="#top" class="sticky-cta-btn" onclick="setTimeout(scrollToZip,300)">Get Quote</a>
 </div>
 
-<!-- qualify celebration flash -->
-<div class="qualify-flash" id="qualify-flash">
-  <div class="qf-check"><i class="fas fa-check"></i></div>
-  <div class="qf-title">Your Area <span class="amt">Qualifies!</span></div>
-  <div class="qf-sub">ZIP <span class="qf-zip" id="qf-zip"></span> is eligible for up to <strong>75% off</strong> + an extra <strong>$200 off</strong>. Loading your quote form&hellip;</div>
-</div>
-
 <footer>
   <img src="./img/autoprotect-logo.svg" alt="AutoProtect" class="footer-logo" />
   <p class="copyright">&copy; 2026 Affordable Home. All Rights Reserved.</p>
   <p>Affordable Home is a lead generation service connecting homeowners with local gutter installation professionals. We are not a contractor.</p>
   <p class="footer-links">
-    <a href="/lp-clog-free-gutters/privacy">Privacy Policy</a>
-    <a href="/lp-clog-free-gutters/terms">Terms &amp; Conditions</a>
+    <a href="./privacy">Privacy Policy</a>
+    <a href="./terms">Terms &amp; Conditions</a>
   </p>
 </footer>
 
@@ -532,8 +514,7 @@
 })();
 
 function buildFormUrl(zip) {
-  var base = 'form.html';
-  var u = new URL(base, window.location.origin + window.location.pathname.replace(/[^\/]*$/,''));
+  var u = new URL('./form.html', window.location.href);
   new URLSearchParams(window.location.search).forEach(function(v,k){ u.searchParams.set(k,v); });
   ['pubid','s1','s2','s3','transid','ckmreqid','ckmat','cid'].forEach(function(k){
     if(!u.searchParams.has(k) || !u.searchParams.get(k)){
@@ -591,25 +572,17 @@ function getActiveZipCard(){
   });
 })();
 
-function showQualifyAndGo(zip){
-  var flash = document.getElementById('qualify-flash');
-  var zEl = document.getElementById('qf-zip');
-  if(zEl) zEl.textContent = zip;
-  if(flash) flash.classList.add('show');
-  setTimeout(function(){ window.location.href = buildFormUrl(zip); }, 1400);
-}
-
 function goToForm(){
   var input = getActiveZipInput();
   var zip = input.value.replace(/\D/g,'').slice(0,5);
   var errId = (input.id === 'd1-zip') ? 'd1-zip-err' : 'p1-zip-err';
   if(zip.length !== 5){ document.getElementById(errId).classList.add('show'); input.focus(); return; }
-  showQualifyAndGo(zip);
+  window.location.href = buildFormUrl(zip);
 }
 function goToFormBottom(){
   var zip = document.getElementById('p2-zip').value.replace(/\D/g,'').slice(0,5);
   if(zip.length !== 5){ document.getElementById('p2-zip').focus(); return; }
-  showQualifyAndGo(zip);
+  window.location.href = buildFormUrl(zip);
 }
 function scrollToZip(){
   var card = getActiveZipCard();
@@ -617,22 +590,31 @@ function scrollToZip(){
   setTimeout(function(){ getActiveZipInput().focus(); }, 500);
 }
 
-// Sticky bottom CTA — show when the active hero zip card scrolls out of view
+// Sticky bottom CTA — show once the active hero zip card scrolls out of view,
+// but retract when the footer is in view so it never covers the legal links
 (function(){
   var sticky = document.getElementById('sticky-cta');
-  if(!sticky || !('IntersectionObserver' in window)) return;
-  var observer = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){ sticky.classList.remove('show'); }
-      else { sticky.classList.add('show'); }
-    });
+  var footer = document.querySelector('footer');
+  if(!sticky || !footer || !('IntersectionObserver' in window)) return;
+  var zipVisible = true, footerVisible = false;
+  function update(){
+    if(!zipVisible && !footerVisible){ sticky.classList.add('show'); }
+    else { sticky.classList.remove('show'); }
+  }
+  var zipObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ zipVisible = e.isIntersecting; });
+    update();
   },{threshold:0});
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ footerVisible = e.isIntersecting; });
+    update();
+  },{threshold:0}).observe(footer);
   var current = null;
   function bind(){
     var card = getActiveZipCard();
     if(card === current) return;
-    if(current) observer.unobserve(current);
-    if(card){ observer.observe(card); current = card; }
+    if(current) zipObserver.unobserve(current);
+    if(card){ zipObserver.observe(card); current = card; zipVisible = card.getBoundingClientRect().top < window.innerHeight; update(); }
   }
   bind();
   window.addEventListener('resize', bind);
