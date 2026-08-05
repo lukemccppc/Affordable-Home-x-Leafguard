@@ -23,7 +23,7 @@
     body{font-family:'Inter',sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;line-height:1.6}
     img{max-width:100%;display:block}
     .hero-logo-bar{position:relative;z-index:3;display:flex;justify-content:center;padding:22px 20px 0}
-    .hero-logo{height:43.2px;width:auto;filter:drop-shadow(0 2px 10px rgba(0,0,0,.4))}
+    .hero-logo{height:76px;width:auto;filter:drop-shadow(0 2px 10px rgba(0,0,0,.4))}
     .hero{position:relative;overflow:hidden;background:var(--navy);padding:0 16px 56px}
     .hero::before{content:'';position:absolute;inset:0;background:url('./img/hero-photo.jpg') center/cover no-repeat;opacity:.62}
     .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,31,60,.45),rgba(10,31,60,.68))}
@@ -35,13 +35,10 @@
     .offer-detail strong{color:#fff;font-weight:800}
     .offer-copy{font-size:14px;font-weight:500;color:rgba(255,255,255,.62);margin-top:16px;line-height:1.7;max-width:480px}
     .offer-copy strong{color:rgba(255,255,255,.9);font-weight:700}
-    .promo-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:24px 0 0}
     .m-headline{font-size:42px;line-height:1.08;letter-spacing:-1px;margin:0}
     .m-subline{font-size:19px;font-weight:800;color:#fff;margin-top:14px;line-height:1.45;text-shadow:0 2px 10px rgba(0,0,0,.4)}
     .m-subline .amt{color:var(--orange)}
     .zip-card{margin-top:22px}
-    .promo-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:9px 20px;font-size:14px;font-weight:700;color:#fff;white-space:nowrap}
-    .promo-pill i{font-size:14px;color:var(--orange)}
     .zip-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:28px 24px 24px;width:100%;max-width:440px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 20px 60px rgba(0,0,0,.3)}
     .zip-card-label{font-size:14px;font-weight:600;color:rgba(255,255,255,.9);margin-bottom:14px;text-align:center}
     .zip-input-row{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
@@ -76,13 +73,15 @@
     .sticky-cta-btn{flex-shrink:0;background:var(--orange);color:#fff;border:none;border-radius:10px;padding:12px 22px;font-size:13px;font-weight:800;text-transform:uppercase;cursor:pointer;text-decoration:none;letter-spacing:.5px}
     .claim-toast.show-when-sticky{bottom:72px}
 
-    .trust-strip{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:24px;flex-wrap:wrap}
-    .trust-item{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:rgba(255,255,255,.75);white-space:nowrap}
-    .trust-item i{color:var(--orange);font-size:14px}
-    .trust-item.rating-pill{background:#fff;color:var(--navy);border-radius:100px;padding:8px 18px;font-size:15px;font-weight:800;box-shadow:0 6px 18px rgba(0,0,0,.2)}
-    .trust-item.rating-pill i{color:#F0C419;font-size:15px}
-    .trust-item.highlight{background:var(--orange);color:#fff;border-radius:100px;padding:8px 18px;box-shadow:0 6px 18px rgba(0,0,0,.2)}
-    .trust-item.highlight i{color:#fff}
+    .hero-stats-bar{background:var(--navy);padding:22px 20px}
+    .hero-stats-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;align-items:center}
+    .hero-stat{display:flex;align-items:center;gap:14px;padding:8px 28px;border-right:1px solid rgba(255,255,255,.15)}
+    .hero-stat:last-child{border-right:none}
+    .hero-stat-icon{color:var(--orange);font-size:26px;flex-shrink:0;width:28px;text-align:center}
+    .hero-stat-text{display:flex;flex-direction:column;line-height:1.35}
+    .hero-stat-title{color:#fff;font-weight:800;font-size:15px}
+    .hero-stat-sub{color:rgba(255,255,255,.55);font-size:12.5px}
+    @media (max-width:900px){.hero-stat{border-right:none;padding:6px 16px}}
     section.block{padding:64px 20px}
     .container{max-width:1100px;margin:0 auto}
     .sec-title{font-size:clamp(24px,3vw,34px);font-weight:800;text-align:center;line-height:1.2;color:var(--navy);margin-bottom:8px}
@@ -174,7 +173,7 @@
     .dh-hero{position:relative;overflow:hidden;background:url('./img/hero-photo.jpg') center 45% / cover no-repeat}
     .dh-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg, rgba(6,14,28,.95) 0%, rgba(6,14,28,.82) 25%, rgba(6,14,28,.5) 50%, rgba(6,14,28,.18) 75%, rgba(6,14,28,0) 100%);pointer-events:none;z-index:0}
     .dh-logo-row{position:relative;z-index:1;display:flex;justify-content:center;padding:14px 16px 4px}
-    .dh-logo{height:32.4px;width:auto}
+    .dh-logo{height:64px;width:auto}
     .dh-inner{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:120px 44px 110px;display:grid;grid-template-columns:1.05fr .95fr;column-gap:48px;align-items:center}
     .dh-content{max-width:640px;margin:0;text-align:left}
     .dh-headline{margin-bottom:16px}
@@ -183,13 +182,6 @@
     .dh-accent{color:var(--orange)}
     .dh-sub{font-size:clamp(19px,1.9vw,25px);font-weight:700;color:#fff;margin-bottom:26px;line-height:1.45}
     .dh-sub strong{color:var(--orange);font-weight:800}
-    .dh-benefits{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:8px;margin:0 0 8px}
-    .dh-ben{display:flex;align-items:center;gap:8px;padding:7px 16px 7px 7px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);font-size:12.5px;font-weight:700;color:#fff;white-space:nowrap}
-    .dh-ben-circle{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.12);display:grid;place-items:center;flex-shrink:0}
-    .dh-ben-circle i{color:var(--orange);font-size:12px}
-    .dh-ben.highlight{background:var(--orange);border-color:var(--orange)}
-    .dh-ben.highlight .dh-ben-circle{background:rgba(255,255,255,.25)}
-    .dh-ben.highlight .dh-ben-circle i{color:#fff}
     .dh-zip-card{background:rgba(20,32,54,.6);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:36px 40px;max-width:520px;width:100%;margin:0;justify-self:end;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);text-align:center}
     .dh-zip-card h3{color:#fff;font-size:18px;font-weight:800;margin-bottom:22px}
     .dh-zip-input{width:100%;padding:17px 18px;border-radius:10px;border:none;font-family:'Inter',sans-serif;font-size:15px;color:#333;background:#fff;outline:none;margin-bottom:14px;text-align:center}
@@ -226,20 +218,6 @@
           Get a <strong>FREE</strong> Gutter Quote +<br>
           <strong>Up To 75% Off</strong> Installation
         </p>
-        <div class="dh-benefits">
-          <div class="dh-ben highlight">
-            <div class="dh-ben-circle"><i class="fas fa-shield-halved"></i></div>
-            <span>Lifetime Warranty</span>
-          </div>
-          <div class="dh-ben">
-            <div class="dh-ben-circle"><i class="fas fa-leaf"></i></div>
-            <span>Debris-Proof</span>
-          </div>
-          <div class="dh-ben">
-            <div class="dh-ben-circle"><i class="fas fa-broom"></i></div>
-            <span>Maintenance-Free</span>
-          </div>
-        </div>
       </div>
       <div class="dh-zip-card" id="d1-zip-card">
         <h3>See How Much You Could Save Today!</h3>
@@ -272,18 +250,35 @@
         <div class="zip-microcopy"><i class="fas fa-gift"></i> Free no-obligation estimate with every inquiry</div>
         <div class="zip-err" id="p1-zip-err">Please enter a valid 5-digit zip code.</div>
       </div>
-      <div class="promo-row">
-        <div class="promo-pill"><i class="fas fa-leaf"></i> Debris-Proof</div>
-        <div class="promo-pill"><i class="fas fa-broom"></i> Maintenance-Free</div>
-      </div>
-      <div class="trust-strip">
-        <div class="trust-item highlight"><i class="fas fa-shield-halved"></i> Lifetime Warranty</div>
-        <div class="trust-item"><i class="fas fa-award"></i> Certified Pros</div>
-      </div>
     </div>
   </section>
 
 </div>
+
+<section class="hero-stats-bar">
+  <div class="hero-stats-inner">
+    <div class="hero-stat">
+      <i class="fas fa-star hero-stat-icon"></i>
+      <div class="hero-stat-text"><span class="hero-stat-title">4.8/5 Rating</span><span class="hero-stat-sub">2,800+ homeowners</span></div>
+    </div>
+    <div class="hero-stat">
+      <i class="fas fa-house hero-stat-icon"></i>
+      <div class="hero-stat-text"><span class="hero-stat-title">25,000+ Installs</span><span class="hero-stat-sub">nationwide</span></div>
+    </div>
+    <div class="hero-stat">
+      <i class="fas fa-shield-halved hero-stat-icon"></i>
+      <div class="hero-stat-text"><span class="hero-stat-title">Lifetime Warranty</span><span class="hero-stat-sub">transferable</span></div>
+    </div>
+    <div class="hero-stat">
+      <i class="fas fa-user hero-stat-icon"></i>
+      <div class="hero-stat-text"><span class="hero-stat-title">Certified Pros</span><span class="hero-stat-sub">licensed &amp; insured</span></div>
+    </div>
+    <div class="hero-stat">
+      <i class="fas fa-flag-usa hero-stat-icon"></i>
+      <div class="hero-stat-text"><span class="hero-stat-title">Made in America</span><span class="hero-stat-sub">premium materials</span></div>
+    </div>
+  </div>
+</section>
 
 <section class="block benefits-section">
   <div class="container">
