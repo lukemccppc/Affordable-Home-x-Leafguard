@@ -81,7 +81,8 @@
     .hero-stat-text{display:flex;flex-direction:column;line-height:1.35}
     .hero-stat-title{color:#fff;font-weight:800;font-size:15px}
     .hero-stat-sub{color:rgba(255,255,255,.55);font-size:12.5px}
-    @media (max-width:900px){.hero-stat{border-right:none;padding:6px 16px}}
+    .hero-stat.highlight{border:2px solid #fff;border-radius:12px;background:rgba(255,255,255,.12);padding:6px 24px}
+    @media (max-width:900px){.hero-stat{border-right:none;padding:6px 16px}.hero-stat.highlight{order:-1}}
     section.block{padding:64px 20px}
     .container{max-width:1100px;margin:0 auto}
     .sec-title{font-size:clamp(24px,3vw,34px);font-weight:800;text-align:center;line-height:1.2;color:var(--navy);margin-bottom:8px}
@@ -114,11 +115,19 @@
     .product-feats .pf-ico i{color:var(--orange);font-size:16px}
     .product-feats h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:2px}
     .product-feats p{font-size:14px;color:var(--body);line-height:1.55}
-    .partners-section{background:#fff}
-    .partners-grid{display:flex;justify-content:center;align-items:center;gap:20px;max-width:840px;margin:0 auto}
-    .partner-logo{background:#fff;border:1px solid var(--g100);border-radius:14px;padding:24px;width:100%;height:120px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.04)}
-    .partner-logo img{max-width:100%;max-height:100%;object-fit:contain}
-    .partner-logo.featured-partner{width:100%;max-width:420px;height:220px;padding:32px}
+    .reviews-section{position:relative;overflow:hidden;padding:88px 20px}
+    .reviews-section::before{content:'';position:absolute;inset:0;background:url('./img/reviews-banner.webp') center/cover no-repeat}
+    .reviews-section::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,30,42,.85),rgba(16,30,42,.93))}
+    .reviews-section .container{position:relative;z-index:1}
+    .reviews-head{max-width:700px;margin:0 auto 48px;text-align:center}
+    .reviews-head h2{color:#fff;font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px;line-height:1.2}
+    .reviews-head p{color:rgba(255,255,255,.8);font-size:16px;line-height:1.7}
+    .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto}
+    .review-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:28px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+    .review-stars{color:#FFC107;font-size:15px;margin-bottom:14px;display:flex;gap:3px}
+    .review-quote{color:#fff;font-size:15px;line-height:1.65;margin-bottom:16px}
+    .review-name{color:rgba(255,255,255,.7);font-weight:700;font-size:14px}
+    @media (max-width:900px){.reviews-grid{grid-template-columns:1fr}}
     .gallery-section{background:var(--g50)}
     .gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:900px;margin:0 auto}
     .gallery-img{border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:var(--g100)}
@@ -182,7 +191,7 @@
     .dh-accent{color:var(--orange)}
     .dh-sub{font-size:clamp(19px,1.9vw,25px);font-weight:700;color:#fff;margin-bottom:26px;line-height:1.45}
     .dh-sub strong{color:var(--orange);font-weight:800}
-    .dh-zip-card{background:rgba(20,32,54,.6);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:36px 40px;max-width:520px;width:100%;margin:0;justify-self:end;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);text-align:center}
+    .dh-zip-card{background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:36px 40px;max-width:520px;width:100%;margin:0;justify-self:end;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);text-align:center}
     .dh-zip-card h3{color:#fff;font-size:18px;font-weight:800;margin-bottom:22px}
     .dh-zip-input{width:100%;padding:17px 18px;border-radius:10px;border:none;font-family:'Inter',sans-serif;font-size:15px;color:#333;background:#fff;outline:none;margin-bottom:14px;text-align:center}
     .dh-zip-input::placeholder{color:#9ca3af}
@@ -265,7 +274,7 @@
       <i class="fas fa-house hero-stat-icon"></i>
       <div class="hero-stat-text"><span class="hero-stat-title">25,000+ Installs</span><span class="hero-stat-sub">nationwide</span></div>
     </div>
-    <div class="hero-stat">
+    <div class="hero-stat highlight">
       <i class="fas fa-shield-halved hero-stat-icon"></i>
       <div class="hero-stat-text"><span class="hero-stat-title">Lifetime Warranty</span><span class="hero-stat-sub">transferable</span></div>
     </div>
@@ -331,12 +340,28 @@
   </div>
 </section>
 
-<section class="block partners-section">
+<section class="reviews-section">
   <div class="container">
-    <h2 class="sec-title">In Partnership With</h2>
-    <div class="sec-sub">&nbsp;</div>
-    <div class="partners-grid">
-      <div class="partner-logo featured-partner"><img src="./img/leafguard-logo.jpg" alt="LeafGuard" loading="lazy"></div>
+    <div class="reviews-head">
+      <h2>500,000+ Happy Customers</h2>
+      <p>With more than 30 years in business and over 500,000 customers coast to coast, maintenance-free protection from Leafguard is a constant you can trust.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="review-quote">&ldquo;The installation team did a great job installing and cleaning up before they left. Everything was just as promised!&rdquo;</p>
+        <div class="review-name">Jimmy S.</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="review-quote">&ldquo;I highly recommend that anyone considering doing something with their gutter system check out Leafguard. You will not be disappointed in the quality.&rdquo;</p>
+        <div class="review-name">Sean H.</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="review-quote">&ldquo;Very happy and satisfied with my new gutters. The company installed while I was away for the day. Cleanest job I&rsquo;ve seen! Great job!&rdquo;</p>
+        <div class="review-name">Kenny B.</div>
+      </div>
     </div>
   </div>
 </section>
