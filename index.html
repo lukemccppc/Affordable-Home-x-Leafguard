@@ -26,7 +26,7 @@
     .hero-logo{height:104px;width:auto;filter:drop-shadow(0 2px 10px rgba(0,0,0,.4))}
     .hero{position:relative;overflow:hidden;background:var(--navy);padding:0 16px 56px}
     .hero::before{content:'';position:absolute;inset:0;background:url('./img/hero-photo.jpg') center/cover no-repeat;opacity:.62}
-    .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,31,60,.45),rgba(10,31,60,.68))}
+    .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.68))}
     .hero-content{position:relative;z-index:2;max-width:600px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:44px;padding-bottom:24px}
     .offer-pct{font-family:'Inter',sans-serif;font-size:52px;font-weight:900;line-height:1;color:#fff;letter-spacing:-1.5px;text-shadow:0 2px 12px rgba(0,0,0,.45)}
     .offer-pct .amt{color:var(--orange)}
@@ -82,7 +82,13 @@
     .hero-stat-title{color:#fff;font-weight:800;font-size:15px}
     .hero-stat-sub{color:rgba(255,255,255,.55);font-size:12.5px}
     .hero-stat.highlight{border:2px solid #fff;border-radius:12px;background:rgba(255,255,255,.12);padding:6px 24px}
-    @media (max-width:900px){.hero-stat{border-right:none;padding:6px 16px}.hero-stat.highlight{order:-1}}
+    @media (max-width:900px){
+      .hero-stats-inner{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+      .hero-stat{border-right:none;padding:14px 10px;flex-direction:column;text-align:center;gap:6px;background:rgba(255,255,255,.08);border-radius:12px}
+      .hero-stat-text{align-items:center}
+      .hero-stat.highlight{grid-column:1/-1;order:-1;flex-direction:row;text-align:left;background:rgba(255,255,255,.12);padding:10px 20px}
+      .hero-stat.highlight .hero-stat-text{align-items:flex-start}
+    }
     section.block{padding:64px 20px}
     .container{max-width:1100px;margin:0 auto}
     .sec-title{font-size:clamp(24px,3vw,34px);font-weight:800;text-align:center;line-height:1.2;color:var(--navy);margin-bottom:8px}
@@ -117,7 +123,7 @@
     .product-feats p{font-size:14px;color:var(--body);line-height:1.55}
     .reviews-section{position:relative;overflow:hidden;padding:88px 20px}
     .reviews-section::before{content:'';position:absolute;inset:0;background:url('./img/reviews-banner.webp') center/cover no-repeat}
-    .reviews-section::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,30,42,.85),rgba(16,30,42,.93))}
+    .reviews-section::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.85),rgba(0,0,0,.93))}
     .reviews-section .container{position:relative;z-index:1}
     .reviews-head{max-width:700px;margin:0 auto 48px;text-align:center}
     .reviews-head h2{color:#fff;font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px;line-height:1.2}
@@ -158,7 +164,7 @@
     .faq-a{padding:0 20px 18px;font-size:14px;color:var(--body);line-height:1.65}
     .cta-banner{position:relative;overflow:hidden;background:var(--navy);text-align:center;padding:72px 20px}
     .cta-banner::before{content:'';position:absolute;inset:0;background:url('./img/hero-photo.jpg') center/cover no-repeat;opacity:.62}
-    .cta-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,31,60,.45),rgba(10,31,60,.68))}
+    .cta-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.68))}
     .cta-banner .container{position:relative;z-index:1;max-width:560px}
     .cta-banner h2{font-size:clamp(24px,3.5vw,40px);font-weight:800;color:#fff;margin-bottom:24px}
     .cta-zip-row{display:flex;flex-direction:column;gap:10px;max-width:420px;margin:0 auto}
@@ -180,7 +186,7 @@
       #hero-mobile{display:none}
     }
     .dh-hero{position:relative;overflow:hidden;background:url('./img/hero-photo.jpg') center 45% / cover no-repeat}
-    .dh-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg, rgba(6,14,28,.95) 0%, rgba(6,14,28,.82) 25%, rgba(6,14,28,.5) 50%, rgba(6,14,28,.18) 75%, rgba(6,14,28,0) 100%);pointer-events:none;z-index:0}
+    .dh-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.82) 25%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.18) 75%, rgba(0,0,0,0) 100%);pointer-events:none;z-index:0}
     .dh-logo-row{position:relative;z-index:1;display:flex;justify-content:center;padding:14px 16px 4px}
     .dh-logo{height:88px;width:auto}
     .dh-inner{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:120px 44px 110px;display:grid;grid-template-columns:1.05fr .95fr;column-gap:48px;align-items:center}
@@ -416,9 +422,9 @@
     <h2 class="sec-title">Frequently Asked Questions</h2>
     <div class="sec-sub">&nbsp;</div>
     <div class="faq-list">
-      <details class="faq-item"><summary class="faq-q"><span>How much do gutter guards cost with this offer?</span><i class="fas fa-chevron-down faq-arrow"></i></summary><div class="faq-a">With this savings event, qualifying homeowners receive up to 75% off installation plus an extra $200 off their purchase. Exact pricing is determined during your free no-obligation estimate.</div></details>
-      <details class="faq-item"><summary class="faq-q"><span>How long does gutter guard installation take?</span><i class="fas fa-chevron-down faq-arrow"></i></summary><div class="faq-a">Most gutter guard installations are completed in just a few hours. Professional installers work efficiently to minimize disruption to your daily routine.</div></details>
-      <details class="faq-item"><summary class="faq-q"><span>Will gutter guards work with my existing gutters?</span><i class="fas fa-chevron-down faq-arrow"></i></summary><div class="faq-a">Yes! The gutter guards feature a universal fit design that works with virtually all existing gutter systems and roof types &mdash; no modifications needed.</div></details>
+      <details class="faq-item"><summary class="faq-q"><span>How much does Leafguard cost with this offer?</span><i class="fas fa-chevron-down faq-arrow"></i></summary><div class="faq-a">With this savings event, qualifying homeowners receive up to 75% off installation plus an extra $200 off their purchase. Exact pricing is determined during your free no-obligation estimate.</div></details>
+      <details class="faq-item"><summary class="faq-q"><span>How long does Leafguard installation take?</span><i class="fas fa-chevron-down faq-arrow"></i></summary><div class="faq-a">Most Leafguard installations are completed in just a few hours. Professional installers work efficiently to minimize disruption to your daily routine.</div></details>
+      <details class="faq-item"><summary class="faq-q"><span>Will Leafguard work with my existing gutters?</span><i class="fas fa-chevron-down faq-arrow"></i></summary><div class="faq-a">Yes! Leafguard features a universal fit design that works with virtually all existing gutter systems and roof types &mdash; no modifications needed.</div></details>
       <details class="faq-item"><summary class="faq-q"><span>What does the lifetime warranty cover?</span><i class="fas fa-chevron-down faq-arrow"></i></summary><div class="faq-a">The lifetime warranty covers defects in materials and workmanship for as long as you own your home. Your installer will walk you through the full warranty details during your consultation.</div></details>
       <details class="faq-item"><summary class="faq-q"><span>Is the estimate really free with no obligation?</span><i class="fas fa-chevron-down faq-arrow"></i></summary><div class="faq-a">Absolutely. The estimate is 100% free with no obligation to purchase. A certified gutter specialist will inspect your gutters, explain your options, and provide exact pricing for your home.</div></details>
     </div>
