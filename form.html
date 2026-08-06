@@ -13,7 +13,7 @@
   <style>
     :root{
       --navy:#172A3A; --navy-deep:#101E2A; --navy-mid:#234059;
-      --orange:#F97316; --orange-dk:#ea6c0f;
+      --orange:#218F52; --orange-dk:#1D7D48; --orange-soft:rgba(33,143,82,.12);
       --ink:#1A1A1A; --body:#555;
       --g50:#F5F5F5; --g100:#EEF0F3; --g300:#D1D5DB; --g700:#374151; --g900:#111827;
       --shadow:0 8px 40px rgba(10,31,60,.18);
@@ -22,21 +22,23 @@
     body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--navy);-webkit-font-smoothing:antialiased;line-height:1.6;min-height:100vh}
     img{max-width:100%;display:block}
     .page-logo-row{position:relative;z-index:3;display:flex;justify-content:center;padding:14px 16px 4px}
-    .page-logo-row img{height:32.4px;width:auto}
+    .page-logo-row img{height:64px;width:auto}
     @media (max-width:767px){
       .page-logo-row{padding:22px 20px 0}
-      .page-logo-row img{height:43.2px}
+      .page-logo-row img{height:76px}
     }
     .wrap{position:relative;overflow:hidden;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:0 16px 56px}
-    .wrap::before{content:'';position:absolute;inset:0;background:url('./img/hero-photo.png') center/cover no-repeat;opacity:.62}
-    .wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,31,60,.45),rgba(10,31,60,.68))}
+    .wrap::before{content:'';position:absolute;inset:0;background:url('./img/reviews-banner.webp') center/cover no-repeat;opacity:.62}
+    .wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,42,58,.45),rgba(23,42,58,.68))}
     .wrap .form-card{margin-top:28px}
     .form-card{position:relative;z-index:2;background:#fff;border-radius:20px;padding:32px;width:100%;max-width:560px;box-shadow:0 20px 60px rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.5)}
     .form-head{text-align:center;margin-bottom:20px}
     .form-head h1{font-family:'Source Serif 4',serif;font-size:26px;font-weight:700;color:var(--navy);line-height:1.2}
     .form-head p{font-size:14px;color:var(--body);margin-top:6px}
     .form-head .accent{color:var(--orange);font-weight:700}
-    .qualified{display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.35);color:var(--orange);font-size:14px;font-weight:800;border-radius:10px;padding:12px 14px;margin-bottom:20px;animation:qual-pop .45s cubic-bezier(.18,1.4,.4,1)}
+    .secure-line{display:flex;align-items:center;justify-content:center;gap:7px;font-size:12px;font-weight:600;color:var(--body);margin-bottom:18px}
+    .secure-line i{color:var(--orange);font-size:12px}
+    .qualified{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--orange-soft);border:1px solid rgba(33,143,82,.35);color:var(--orange);font-size:14px;font-weight:800;border-radius:10px;padding:12px 14px;margin-bottom:20px;animation:qual-pop .45s cubic-bezier(.18,1.4,.4,1)}
     .qualified i{font-size:16px}
     @keyframes qual-pop{0%{transform:scale(.85);opacity:0}100%{transform:scale(1);opacity:1}}
     .progress-wrap{margin-bottom:24px}
@@ -53,6 +55,7 @@
     .field input,.field select{padding:12px 14px;font-size:15px;font-family:'Inter',sans-serif;border:1.5px solid var(--g300);border-radius:8px;color:var(--ink);background:#fff;outline:none;transition:border-color 150ms;width:100%}
     .field input:focus,.field select:focus{border-color:var(--orange)}
     .field input.error,.field select.error{border-color:#ef4444}
+    .field input[readonly]{background:var(--g50);color:var(--g700)}
     .field-error{font-size:12px;color:#ef4444;margin-top:4px;display:none}
     .field-error.visible{display:block}
     .zip-hint{font-size:11px;color:#888;margin-top:4px}
@@ -65,8 +68,19 @@
     .form-disclaimer a{color:#888;text-decoration:underline}
     @media (max-width:540px){.field-row,.field-row-addr{grid-template-columns:1fr}.form-card{padding:24px 18px}}
 
+    /* choice cards (steps 1 & 2) */
+    .choice-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:6px}
+    .choice-card{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1.5px solid var(--g300);border-radius:12px;background:#fff;cursor:pointer;transition:border-color .15s,background .15s}
+    .choice-card:hover{border-color:var(--orange)}
+    .choice-card.selected{border-color:var(--orange);background:var(--orange-soft)}
+    .choice-icon{flex-shrink:0;width:38px;height:38px;border-radius:9px;background:var(--g50);display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:15px;transition:background .15s,color .15s}
+    .choice-card.selected .choice-icon{background:var(--orange);color:#fff}
+    .choice-label{font-size:15px;font-weight:700;color:var(--ink)}
+    .choice-error{font-size:12px;color:#ef4444;margin-top:8px;display:none}
+    .choice-error.visible{display:block}
+
     /* submission overlay */
-    .submit-overlay{position:fixed;inset:0;z-index:300;background:rgba(10,31,60,.96);display:none;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:24px}
+    .submit-overlay{position:fixed;inset:0;z-index:300;background:rgba(16,30,42,.96);display:none;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:24px}
     .submit-overlay.show{display:flex}
     .spinner{width:56px;height:56px;border:4px solid rgba(255,255,255,.2);border-top-color:var(--orange);border-radius:50%;animation:spin 1s linear infinite;margin-bottom:22px}
     @keyframes spin{to{transform:rotate(360deg)}}
@@ -78,62 +92,78 @@
 
 <div class="wrap">
   <div class="page-logo-row">
-    <a href="index.html"><img src="./img/autoprotect-logo.svg" alt="AutoProtect" /></a>
+    <a href="index.html"><img src="./img/autoprotect-logo.svg" alt="Affordable Home" /></a>
   </div>
   <div class="form-card">
     <div class="form-head">
       <h1>You're Almost There!</h1>
       <p>Complete your <span class="accent">free, no-obligation</span> gutter quote.</p>
     </div>
+    <div class="secure-line"><i class="fas fa-lock"></i> Your info is secure &amp; never shared</div>
     <div class="qualified" id="qualified-badge" style="display:none">
       <i class="fas fa-circle-check"></i> <span id="qualified-text">Great news &mdash; your area qualifies!</span>
     </div>
 
     <form id="pii" onsubmit="return false;">
       <div class="progress-wrap">
-        <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:33%"></div></div>
-        <div class="step-count" id="step-count">Step 1 of 3</div>
+        <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:25%"></div></div>
+        <div class="step-count" id="step-count">Step 1 of 4</div>
       </div>
 
-      <!-- Step 1: Gutter Age -->
+      <!-- Step 1: Gutter Project Type -->
       <div class="form-step active" id="step-1">
-        <h2>How old are your current gutters?</h2>
-        <div class="field">
-          <select id="gutter-age">
-            <option value="">Select an option</option>
-            <option>Less than 5 years</option>
-            <option>5&ndash;10 years</option>
-            <option>10&ndash;20 years</option>
-            <option>20+ years</option>
-            <option>I don't know</option>
-          </select>
-          <span class="field-error" id="err-gutter-age">Please select an option.</span>
+        <h2>What Type of Gutter Project?</h2>
+        <div class="choice-grid" id="project-type-grid">
+          <div class="choice-card" data-value="Install Gutter Guards">
+            <div class="choice-icon"><i class="fas fa-shield-halved"></i></div>
+            <div class="choice-label">Install Gutter Guards</div>
+          </div>
+          <div class="choice-card" data-value="Replace Existing Gutters">
+            <div class="choice-icon"><i class="fas fa-arrows-rotate"></i></div>
+            <div class="choice-label">Replace Existing Gutters</div>
+          </div>
+          <div class="choice-card" data-value="New Gutter Installation">
+            <div class="choice-icon"><i class="fas fa-hammer"></i></div>
+            <div class="choice-label">New Gutter Installation</div>
+          </div>
+          <div class="choice-card" data-value="Not Sure - Need Advice">
+            <div class="choice-icon"><i class="fas fa-circle-question"></i></div>
+            <div class="choice-label">Not Sure &mdash; Need Advice</div>
+          </div>
         </div>
-        <button type="button" class="btn-orange" onclick="nextStep(1)">Next &rarr;</button>
+        <span class="choice-error" id="err-project-type">Please select an option.</span>
+        <input type="hidden" id="project-type" name="project_type" value="" />
       </div>
 
-      <!-- Step 2: Home Size -->
+      <!-- Step 2: Home Type -->
       <div class="form-step" id="step-2">
-        <h2>Approximate square footage of your home</h2>
-        <div class="field">
-          <select id="sqft">
-            <option value="">Select an option</option>
-            <option>Under 1,000 sq ft</option>
-            <option>1,000&ndash;1,500 sq ft</option>
-            <option>1,500&ndash;2,000 sq ft</option>
-            <option>2,000&ndash;2,500 sq ft</option>
-            <option>2,500&ndash;3,000 sq ft</option>
-            <option>3,000+ sq ft</option>
-          </select>
-          <span class="field-error" id="err-sqft">Please select an option.</span>
+        <h2>What Type of Home?</h2>
+        <div class="choice-grid" id="home-type-grid">
+          <div class="choice-card" data-value="Single Family Home">
+            <div class="choice-icon"><i class="fas fa-house"></i></div>
+            <div class="choice-label">Single Family Home</div>
+          </div>
+          <div class="choice-card" data-value="Townhouse">
+            <div class="choice-icon"><i class="fas fa-house-chimney"></i></div>
+            <div class="choice-label">Townhouse</div>
+          </div>
+          <div class="choice-card" data-value="Multi-Family Home">
+            <div class="choice-icon"><i class="fas fa-city"></i></div>
+            <div class="choice-label">Multi-Family Home</div>
+          </div>
+          <div class="choice-card" data-value="Mobile Home">
+            <div class="choice-icon"><i class="fas fa-warehouse"></i></div>
+            <div class="choice-label">Mobile Home</div>
+          </div>
         </div>
-        <button type="button" class="btn-orange" onclick="nextStep(2)">Next &rarr;</button>
+        <span class="choice-error" id="err-home-type">Please select an option.</span>
+        <input type="hidden" id="home-type" name="home_type" value="" />
         <br /><button type="button" class="btn-back" onclick="prevStep(2)">&larr; Back</button>
       </div>
 
-      <!-- Step 3: Contact + Phone -->
+      <!-- Step 3: Contact Info -->
       <div class="form-step" id="step-3">
-        <h2>Where should we send your quote?</h2>
+        <h2>Who Are We Talking To?</h2>
         <div class="field-row">
           <div class="field">
             <label for="first-name">First Name</label>
@@ -151,32 +181,44 @@
           <input type="email" id="email" name="email" placeholder="jane@example.com" autocomplete="email" />
           <span class="field-error" id="err-email">Please enter a valid email address.</span>
         </div>
-        <div class="field-row field-row-addr">
-          <div class="field">
-            <label for="address">Street Address</label>
-            <input type="text" id="address" name="address" placeholder="123 Main St" autocomplete="street-address" />
-            <span class="field-error" id="err-address">Please enter your street address.</span>
-          </div>
-          <div class="field">
-            <label for="zip">ZIP Code</label>
-            <input type="text" id="zip" name="zip" placeholder="Detecting&hellip;" maxlength="5" autocomplete="postal-code" />
-            <span class="field-error" id="err-zip">Enter a valid 5-digit ZIP.</span>
-            <span class="zip-hint" id="zip-hint"></span>
-          </div>
-        </div>
         <div class="field">
           <label for="phone">Phone Number</label>
           <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" maxlength="14" autocomplete="tel" />
           <span class="field-error" id="err-phone">Please enter a valid phone number.</span>
         </div>
-        <button type="button" class="btn-orange" onclick="submitForm()">Get My Free Quote &rarr;</button>
-        <p class="form-disclaimer">By clicking &ldquo;Get My Free Quote,&rdquo; you authorize Affordable Home and one or more of its marketing partners to contact you at the phone number and email you provided &mdash; including by autodialed and prerecorded calls, text messages, and emails &mdash; about gutter products and services, even if your number is on a Do Not Call list. Consent is not a condition of purchase; message and data rates may apply. By submitting, you agree to our <a href="/lp-clog-free-gutters/privacy">Privacy Policy</a> and <a href="/lp-clog-free-gutters/terms">Terms &amp; Conditions</a>.</p>
+        <button type="button" class="btn-orange" onclick="nextStep(3)">Next &rarr;</button>
         <br /><button type="button" class="btn-back" onclick="prevStep(3)">&larr; Back</button>
       </div>
 
+      <!-- Step 4: Confirm Address -->
+      <div class="form-step" id="step-4">
+        <h2>Please Confirm Your Address</h2>
+        <div class="field">
+          <label for="address">Street Address</label>
+          <input type="text" id="address" name="address" placeholder="123 Main St" autocomplete="street-address" />
+          <span class="field-error" id="err-address">Please enter your street address.</span>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" placeholder="Detecting&hellip;" readonly />
+          </div>
+          <div class="field">
+            <label for="state">State</label>
+            <input type="text" id="state" name="state" placeholder="&mdash;" readonly />
+          </div>
+        </div>
+        <div class="field">
+          <label for="zip">ZIP Code</label>
+          <input type="text" id="zip" name="zip" placeholder="Detecting&hellip;" maxlength="5" autocomplete="postal-code" readonly />
+          <span class="field-error" id="err-zip">Enter a valid 5-digit ZIP.</span>
+        </div>
+        <button type="button" class="btn-orange" onclick="submitForm()">Get My Free Quote &rarr;</button>
+        <p class="form-disclaimer">By clicking &ldquo;Get My Free Quote,&rdquo; you authorize Affordable Home and one or more of its marketing partners to contact you at the phone number and email you provided &mdash; including by autodialed and prerecorded calls, text messages, and emails &mdash; about gutter products and services, even if your number is on a Do Not Call list. Consent is not a condition of purchase; message and data rates may apply. By submitting, you agree to our <a href="/lp-clog-free-gutters/privacy">Privacy Policy</a> and <a href="/lp-clog-free-gutters/terms">Terms &amp; Conditions</a>.</p>
+        <br /><button type="button" class="btn-back" onclick="prevStep(4)">&larr; Back</button>
+      </div>
+
       <!-- Hidden tracking / attribution -->
-      <input id="city"    name="city"    type="hidden" value="" />
-      <input id="state"   name="state"   type="hidden" value="" />
       <input id="ip"      name="ip"      type="hidden" value="50.169.65.10" />
       <input id="lp"      name="lp"      type="hidden" value="https://affordablehome.com/lp-clog-free-gutters/form.html" />
       <input id="lpd"     name="lpd"     type="hidden" value="https://affordablehome.com/lp-clog-free-gutters/" />
@@ -264,7 +306,7 @@
 
 <script>
   let currentStep = 1;
-  const TOTAL_STEPS = 3;
+  const TOTAL_STEPS = 4;
 
   // ── Populate hidden tracking fields + zip from URL params ──
   (function(){
@@ -280,13 +322,10 @@
     var zip = params.get('zip');
     if(zip && /^\d{5}$/.test(zip)){
       var zipEl = document.getElementById('zip');
-      if(zipEl){
-        zipEl.value = zip.substring(0,5);
-        document.getElementById('zip-hint').textContent = 'From your search';
-      }
+      if(zipEl){ zipEl.value = zip.substring(0,5); }
       var badge = document.getElementById('qualified-badge');
       if(badge){ badge.style.display = 'flex'; document.getElementById('qualified-text').textContent = 'Great news — ' + zip + ' qualifies!'; }
-      // kick off geocode early so city/state are ready at submit
+      // kick off geocode early so city/state are ready by the confirm-address step
       geocodeZip();
     }
   })();
@@ -300,46 +339,49 @@
     this.value = val;
   });
 
-  // ── ZIP: digits only ──
-  document.getElementById('zip').addEventListener('input', function() {
-    this.value = this.value.replace(/\D/g, '').substring(0, 5);
-  });
+  // ── Choice cards (steps 1 & 2): select, highlight, auto-advance ──
+  function wireChoiceGrid(gridId, hiddenId, errId, stepNum){
+    var grid = document.getElementById(gridId);
+    grid.querySelectorAll('.choice-card').forEach(function(card){
+      card.addEventListener('click', function(){
+        grid.querySelectorAll('.choice-card').forEach(function(c){ c.classList.remove('selected'); });
+        card.classList.add('selected');
+        document.getElementById(hiddenId).value = card.getAttribute('data-value');
+        document.getElementById(errId).classList.remove('visible');
+        setTimeout(function(){ nextStep(stepNum); }, 250);
+      });
+    });
+  }
+  wireChoiceGrid('project-type-grid', 'project-type', 'err-project-type', 1);
+  wireChoiceGrid('home-type-grid', 'home-type', 'err-home-type', 2);
 
-  // ── Auto-advance dropdown steps on selection ──
-  document.getElementById('gutter-age').addEventListener('change', function(){
-    if (this.value) { clearError('gutter-age','err-gutter-age'); setTimeout(function(){ nextStep(1); }, 200); }
-  });
-  document.getElementById('sqft').addEventListener('change', function(){
-    if (this.value) { clearError('sqft','err-sqft'); setTimeout(function(){ nextStep(2); }, 200); }
-  });
-
-  function showError(fieldId, errId){ document.getElementById(fieldId).classList.add('error'); document.getElementById(errId).classList.add('visible'); }
-  function clearError(fieldId, errId){ document.getElementById(fieldId).classList.remove('error'); document.getElementById(errId).classList.remove('visible'); }
+  function showError(fieldId, errId){ var el = document.getElementById(fieldId); if(el) el.classList.add('error'); document.getElementById(errId).classList.add('visible'); }
+  function clearError(fieldId, errId){ var el = document.getElementById(fieldId); if(el) el.classList.remove('error'); document.getElementById(errId).classList.remove('visible'); }
 
   function validateStep(step) {
     let valid = true;
     if (step === 1) {
-      if (!document.getElementById('gutter-age').value) { showError('gutter-age','err-gutter-age'); valid = false; }
-      else clearError('gutter-age','err-gutter-age');
+      if (!document.getElementById('project-type').value) { document.getElementById('err-project-type').classList.add('visible'); valid = false; }
     }
     if (step === 2) {
-      if (!document.getElementById('sqft').value) { showError('sqft','err-sqft'); valid = false; }
-      else clearError('sqft','err-sqft');
+      if (!document.getElementById('home-type').value) { document.getElementById('err-home-type').classList.add('visible'); valid = false; }
     }
     if (step === 3) {
       const firstName = document.getElementById('first-name').value.trim();
       const lastName  = document.getElementById('last-name').value.trim();
       const email     = document.getElementById('email').value.trim();
-      const zip       = document.getElementById('zip').value.trim();
-      const address   = document.getElementById('address').value.trim();
       const phoneClean= document.getElementById('phone').value.replace(/\D/g, '');
       if (!firstName) { showError('first-name','err-first-name'); valid = false; } else clearError('first-name','err-first-name');
       if (!lastName)  { showError('last-name','err-last-name'); valid = false; } else clearError('last-name','err-last-name');
       const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!email || !emailRe.test(email)) { showError('email','err-email'); valid = false; } else clearError('email','err-email');
-      if (!/^\d{5}$/.test(zip)) { showError('zip','err-zip'); valid = false; } else clearError('zip','err-zip');
-      if (address.length < 3) { showError('address','err-address'); valid = false; } else clearError('address','err-address');
       if (phoneClean.length !== 10) { showError('phone','err-phone'); valid = false; } else clearError('phone','err-phone');
+    }
+    if (step === 4) {
+      const address = document.getElementById('address').value.trim();
+      const zip     = document.getElementById('zip').value.trim();
+      if (address.length < 3) { showError('address','err-address'); valid = false; } else clearError('address','err-address');
+      if (!/^\d{5}$/.test(zip)) { showError('zip','err-zip'); valid = false; } else clearError('zip','err-zip');
     }
     return valid;
   }
@@ -378,11 +420,11 @@
   }
 
   function submitForm() {
-    if (!validateStep(3)) return;
+    if (!validateStep(4)) return;
     var overlay = document.getElementById('submit-overlay');
     if (overlay) overlay.classList.add('show');
-    const btn = document.querySelector('#step-3 .btn-orange');
-    if (btn) { btn.disabled = true; btn.textContent = 'Submitting\u2026'; }
+    const btn = document.querySelector('#step-4 .btn-orange');
+    if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
     const haveGeo = document.getElementById('city').value && document.getElementById('state').value;
     const ensureGeo = haveGeo ? Promise.resolve() : geocodeZip();
     Promise.resolve(ensureGeo).then(function(){
@@ -399,8 +441,8 @@
         city:              document.getElementById('city').value,
         state:             document.getElementById('state').value,
         zip:               document.getElementById('zip').value.trim(),
-        gutter_age:        document.getElementById('gutter-age').value,
-        square_footage:    document.getElementById('sqft').value,
+        project_type:      document.getElementById('project-type').value,
+        home_type:         document.getElementById('home-type').value,
         ip:                document.getElementById('ip').value,
         landingpage:       document.getElementById('lp').value,
         landingpagedetail: document.getElementById('lpd').value,
